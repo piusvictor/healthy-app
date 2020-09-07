@@ -1,0 +1,4 @@
+-Remainder for General Health fit schedule
+-Running Morning routine for Diet,Drink,Medicine and Exercise
+-Running Afternoon routine for Diet,Drink,Medicine and Exercise
+-Running Evening routine for Diet,Drink,Medicine and Exercise
