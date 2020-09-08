@@ -265,9 +265,11 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
               for(let i = 19;i>=0;i--){
                 setTimeout(function timer(){console.log("Seconds Remain"+i);
                 if(i==19){
+                  clearInterval(clearExerciseTimer);
                   alert("You Last exercise session has finished,Please go back to work");
                   alert(" Congratulations for doing all of your Today's exercise sessions ");
-                   clearInterval(clearExerciseTimer);
+                  $("#myModal").modal();
+                   
                 }
                 
               
