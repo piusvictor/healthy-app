@@ -115,8 +115,9 @@ var text_time,txtH,txtM;
 
 
 
-
-
+//Exercise count variable
+var exerciseCount=0;
+var clearExerciseTimer=0;
 
 $(document).ready(function(){
      
@@ -130,6 +131,25 @@ $(document).ready(function(){
 
     //$(document).on('shown.bs.tab', function (e) { 	console.log('ae'); });
      
+
+//start now button monitor
+$('#monitor-now-btn').click(function(){
+
+  //if condition for time range is between 08 and 17
+      // var d=new Date();    
+      // var curHour=parseInt(d.getHours());
+
+ 
+  clearExerciseTimer=setInterval(function(){
+    if(exerciseCount<=5)
+      startnow()  
+     
+  
+  },30000);
+  
+});
+
+
 
      
        
@@ -230,4 +250,62 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
         $('.modal-body').text(activity);
 
         timeCheck(activitytime);
+      }
+
+
+
+      function startnow(){
+        
+        if(exerciseCount==4)
+          alert(" You have one exercise left after this make sure you don't Skip ");
+
+          if(exerciseCount==5){ 
+           // var i=19;
+            if(confirm("Hello,this is last exercise session for today,you have only two minutes to stand up and wind your waist,to continue click Ok or ignore with Cancel")){
+              for(let i = 19;i>=0;i--){
+                setTimeout(function timer(){console.log("Seconds Remain"+i);
+                if(i==19){
+                  alert("You Last exercise session has finished,Please go back to work");
+                  alert(" Congratulations for doing all of your Today's exercise sessions ");
+                   clearInterval(clearExerciseTimer);
+                }
+                
+              
+              },1000 * i);
+                
+                
+                
+              }
+              exerciseCount+=1;
+
+              
+
+              
+          }
+
+
+            
+           
+          }
+          
+        if(exerciseCount<5){
+         
+          if(confirm("Hello,Time to exercise,you have only two minutes to stand up and wind your waist,to continue click Ok or ignore with Cancel")){
+            for(let i = 19;i>=0;i--){
+              setTimeout(function timer(){console.log("Seconds Remain"+i);
+              if(i==19)
+              alert("You current exercise session has finished,Please go back to work");
+            },1000 * i);
+              
+              
+            }
+            exerciseCount+=1;
+            
+        }
+        else
+          return
+
+        }
+        
+        
       }
