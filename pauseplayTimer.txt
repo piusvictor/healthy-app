@@ -1,0 +1,28 @@
+var output = $('h1');
+var isPaused = false;
+var time = 0;
+var t = window.setInterval(function() {
+  if(!isPaused) {
+    time++;
+    output.text("Seconds: " + time);
+  }
+}, 1000);
+
+//with jquery
+$('.pause').on('click', function(e) {
+  e.preventDefault();
+  isPaused = true;
+});
+
+$('.play').on('click', function(e) {
+  e.preventDefault();
+  isPaused = false;
+});
+h1 {
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 12px;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<h1>Seconds: 0</h1>
+<button class="play">Play</button>
+<button class="pause">Pause</button>
