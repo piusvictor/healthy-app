@@ -6,7 +6,10 @@
 var timers=[];
 
 //Alarm declaration
-var audio = new Audio('wind.mp3');
+var audio = new Audio('alarm.mp3');
+
+
+
 
 //Time variables declaration
 var text_time,txtH,txtM;  
@@ -118,8 +121,45 @@ var text_time,txtH,txtM;
 //Exercise count variable
 var exerciseCount=0;
 var clearExerciseTimer=0;
+var isExerciseStart=true;
+
+
+var source = "alarm.mp3"
+var audio1 = document.createElement("audio");
+audio1.src = source;
+audio1.autoplay = true;
+audio1.load()
+
+
+// audio1.addEventListener("load", function() {
+//   audio1.play();
+// }, true);
+
 
 $(document).ready(function(){
+  
+ $('#myModal1').modal();
+ 
+ 
+  var sound = new Howl({
+    src: ['alarm.mp3']
+
+  });
+  
+  sound.play();
+
+
+  clearExerciseTimer=setInterval(function(){
+    if(exerciseCount<=5){
+      if(isExerciseStart)
+        startnow() 
+    }
+       
+     
+  
+  },15000);
+  
+
      
 //$('.save-diet').click(function(){         
     //      //var diet=$('#noondiet :selected').text();
@@ -127,10 +167,27 @@ $(document).ready(function(){
 
     //     $('#noondiet').append('<option value="Makande">Makande</option>');
 
+
+
     //  });
 
     //$(document).on('shown.bs.tab', function (e) { 	console.log('ae'); });
      
+
+
+//trigger button to play audio
+
+
+
+$('#audio-btn').on('click',function(e){
+  //e.preventDefault();
+  audio1.play();
+  console.log('Clicked');
+});
+
+
+
+
 
 //start now button monitor
 $('#monitor-now-btn').click(function(){
@@ -145,7 +202,7 @@ $('#monitor-now-btn').click(function(){
       startnow()  
      
   
-  },30000);
+  },15000);
   
 });
 
@@ -255,19 +312,27 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
 
 
       function startnow(){
+
         
-        if(exerciseCount==4)
-          alert(" You have one exercise left after this make sure you don't Skip ");
+        // if(exerciseCount==4)
+        //  // alert("Umebakiza zoezi moja kwa siku ya Leo baada ya hili tafadhali usiache kufanya na bonyeza Ok kuendelea")
 
           if(exerciseCount==5){ 
            // var i=19;
-            if(confirm("Hello,this is last exercise session for today,you have only two minutes to stand up and wind your waist,to continue click Ok or ignore with Cancel")){
-              for(let i = 19;i>=0;i--){
+           //$('#audio-btn').click();
+            audio.play();
+            if(confirm("Habari,Ni muda wako wa kufanya Zoezi,tafadhali nyanyuka upige hatua kumi,zungusha kiuno,nyosha mikono na mgongo wako pia,bonyeza Ok kuendelea")){
+              audio.pause();
+              isExerciseStart=false;
+              for(let i = 5;i>=0;i--){
                 setTimeout(function timer(){console.log("Seconds Remain"+i);
-                if(i==19){
+                if(i==5){
                   clearInterval(clearExerciseTimer);
-                  alert("You Last exercise session has finished,Please go back to work");
-                  alert(" Congratulations for doing all of your Today's exercise sessions ");
+                  alert("Hili ni zoezi lako la Mwisho kwa siku ya leo,Tafadhali bonyeza Ok kuendelea");
+                  if(confirm("Tafadhali ukimaliza zoezi Bonyeza kitufe cha Ok na uendelee kufanya kazi")){
+                    isExerciseStart=true;
+                  }
+                  alert(" Tunachukua nafasi hii kukupongeza kwa kufanya Mazoezi vizuri sana,Hongera sana na bonyeza Ok kuendelea ");
                   $("#myModal").modal();
                    
                 }
@@ -284,6 +349,8 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
 
               
           }
+          else
+          audio.pause();
 
 
             
@@ -291,12 +358,24 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
           }
           
         if(exerciseCount<5){
-         
-          if(confirm("Hello,Time to exercise,you have only two minutes to stand up and wind your waist,to continue click Ok or ignore with Cancel")){
-            for(let i = 19;i>=0;i--){
+          //$('#audio-btn').click();
+          audio.play();
+          if(confirm("Habari,Ni muda wako wa kufanya Zoezi,tafadhali nyanyuka upige hatua kumi,zungusha kiuno,nyosha mikono na mgongo wako pia,bonyeza Ok kuendelea")){
+            audio.pause();
+            isExerciseStart=false;
+            for(let i = 5;i>=0;i--){
               setTimeout(function timer(){console.log("Seconds Remain"+i);
-              if(i==19)
-              alert("You current exercise session has finished,Please go back to work");
+              if(i==5){
+                if(confirm("Tafadhali ukimaliza zoezi Bonyeza kitufe cha Ok na uendelee kufanya kazi")){
+                  isExerciseStart=true;
+                }
+                else
+                  isExerciseStart=true;
+
+              }
+
+           
+           
             },1000 * i);
               
               
@@ -304,8 +383,12 @@ setTimeout(function(){healthSession("Morning Session Routine","Time for Drink Ju
             exerciseCount+=1;
             
         }
-        else
+        else{
+          audio.pause();
           return
+        }
+          
+
 
         }
         
