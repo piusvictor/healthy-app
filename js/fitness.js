@@ -125,10 +125,10 @@ var isExerciseStart=true;
 
 
 var source = "alarm.mp3"
-var audio1 = document.createElement("audio");
-audio1.src = source;
-audio1.autoplay = true;
-audio1.load()
+// var audio1 = document.createElement("audio");
+// audio1.src = source;
+// audio1.autoplay = true;
+// audio1.load()
 
 
 // audio1.addEventListener("load", function() {
@@ -141,12 +141,12 @@ $(document).ready(function(){
  $('#myModal1').modal();
  
  
-  var sound = new Howl({
-    src: ['alarm.mp3']
+  // var sound = new Howl({
+  //   src: ['alarm.mp3']
 
-  });
+  // });
   
-  sound.play();
+  // sound.play();
 
 
   clearExerciseTimer=setInterval(function(){
