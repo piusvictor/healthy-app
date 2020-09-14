@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.css">
+    <title>Fitness Notifier App</title>
+</head>
+<style>
+    body{
+        background-color: #f0f5f5;
+    }
+</style>
+
+<body>    
+
+
+    <!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header bg-success text-light">
+          <h4 class="modal-title ">Hongera sana!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <img  src="images/congrats.gif" alt="congrats" style="width:100%">
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+
+ <!-- The Modal2 -->
+ <div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-success text-light">
+        <h4 class="modal-title ">Wezesha Sauti Yako</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+        <h5>Tafadhali ruhusu sauti kuskika kwa ajili ya Alarm kwa kubonyeza kitufe cha Ndiyo </h5>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Ndiyo</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header bg-success text-light font-weight-bold">Mwananyamala Hospital Fitness Notifier App</div>
+            <div class="card-body">
+                          
+                <div class="row">
+                    <div class="col-md-6"><img src="images/exercise.jpg" alt="exercise" style="width:100%"></div>
+                    <div class="col-md-6">
+                        <p class="mt-5 font-weight-bold">
+                            Hello! <span class="font-weight-bold text-success">Karibu kwenye mfumo wa Kukumbushwa kufanya Mazoezi,</span>Imarisha <span class="font-weight-bold text-danger"> Afya yako.</span>Linda Afya na uongeze ufanisi wa kufanya kazi
+                        </p>
+                        
+                    </div>
+                </div>
+                
+                
+            
+            
+            </div>
+            <div class="card-footer text-success border-bottom border-success" ><small>Mwananyamala Hospital Support &copy; 2020 copyright</small>
+              
+              <button class="btn btn-success float-right btn-sm" id="audio-btn" ><i class="fa fa-audio-description"></i></button>
+                <button class="btn btn-success float-right btn-sm" id="monitor-now-btn" disabled>Auto Start-Monitoring</button>
+            </div>
+          </div>    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="js/exerciseTime.js"></script>
+</body>
+</html>
